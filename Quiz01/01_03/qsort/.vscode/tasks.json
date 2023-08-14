@@ -10,6 +10,7 @@
                 "-Wall",
                 "-fdiagnostics-color=always",
                 "-g",
+                "-fsanitize=thread",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "${file}",
