@@ -1,18 +1,15 @@
-# TODO TSan CFlag in Make doesn't work , need to fix it.
-FLAGS=-O2 -Wextra -Wall -g -fsanitize=thread -lpthread
+CC = gcc
+CFLAGS = -O2 -Wextra -Wall -lpthread
 
 OUT = qsort-mt
 
-# TSAN = 1
+TSAN = 1
 
-# ifeq ("$(TSAN)", "1")
-#     FLAGS += -g -fsanitize=thread
-# endif
+ifeq ("$(TSAN)", "1")
+    CFLAGS += -g -fsanitize=thread
+endif
 
 all: $(OUT)
-
-%.out: %.c
-	@$(CC) -o $@ $^ $(FLAGS)
 
 clean:
 	rm -rf $(OUT)
