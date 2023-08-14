@@ -1,3 +1,4 @@
+# TODO TSan CFlag in Make doesn't work , need to fix it.
 FLAGS=-O2 -Wextra -Wall -g -fsanitize=thread -lpthread
 
 OUT = qsort-mt
